@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='view_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div>
+<table id="reports">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Description</th>
+    </tr>
+    {% for report in list %}
+    <tr id={{report.id}} class='report'>
+        <td id='reportID'>{{report.id}}</td>
+        <td id='reportName'>{{report.name}}</td>
+        <td id='reportLong'>{{report.lon}}</td>
+        <td id='reportLat'>{{report.lat}}</td>
+        <td id='reportDescription'>{{report.description}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<button onclick="window.location.href = '/';">Return to Main</button>
+</div>
+
+<div id='myMap' onload='loadMapScenario();'></div>
+<script type="text/javascript" src="{{ url_for('static', filename='view_script.js') }}"></script>
+<script type ='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AkqvQ6FOF6sIQ8L4KcoHPmwFoGHipTvcwbpgQEJho8KJMA5_ep6OLKv2x9XakjJh&callback=loadMapScenario'></script>
+{% endblock %}

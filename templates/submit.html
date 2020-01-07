@@ -1,0 +1,34 @@
+{% extends "bootstrap/base.html" %}
+{% from "render_field.html" import render_field %}
+
+{% block head %}
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='submit_style.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div>
+  <h1> Submit Report</h1>
+  <form action="/insert" method="post">
+    {{ form.hidden_tag() }}
+    {{ render_field(form.name) }}
+    <div><b>Click map to set latitude and longitude</b></div>
+    <div>
+      {{ render_field(form.lat) }}
+    </div>
+    <div>
+      {{ render_field(form.lon) }}
+    </div>
+    {{ render_field(form.description) }}
+    <br>
+    {{ form.submit }}
+  </form>
+
+  <button onclick="window.location.href = '/';">Return to Main</button>
+  </div>
+
+  <div id='myMap' onload='loadMapScenario();'></div>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='submit_script.js') }}"></script>
+  <script type ='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AkqvQ6FOF6sIQ8L4KcoHPmwFoGHipTvcwbpgQEJho8KJMA5_ep6OLKv2x9XakjJh&callback=loadMapScenario'></script>
+{% endblock %}
