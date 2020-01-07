@@ -6,8 +6,6 @@ Reid Fluegel (flueg047), Alex McKeever (mckee171)
 
 https://csci-4131-final-timely-warning.herokuapp.com/
 
-https://github.umn.edu/flueg047/timely-warning
-
 Bing Maps API
 
 Our project was inspired by the University's emails entitled Timely Warning. Our web app allows the user to report a disturbance that happened which then may then be viewed by anyone. The submit page is interactive with the map giving the coordinates when clicked. The user must enter a name and the description is optional. The view page lists all the reports and pins where each report’s coordinates lie. 
