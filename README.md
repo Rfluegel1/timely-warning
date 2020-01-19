@@ -1,7 +1,4 @@
 # timely-warning
-
-B Project
-
 Reid Fluegel (flueg047), Alex McKeever (mckee171)
 
 https://csci-4131-final-timely-warning.herokuapp.com/
